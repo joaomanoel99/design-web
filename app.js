@@ -10,11 +10,13 @@ function calcIdade(ano = 2026) {
     }else{
         menor = false;
     }  
-    alert(`${nome} é menor de idade? ${menor} \nIdade: ${idade}`);
+    alert(`${nome} é menor de idade? ${menor} 
+        \nIdade: ${idade} \nPode beber: ${podebeber}`);
     return idade;
 }       
 
 calcIdade();
+alert(`Pode beber: ${podebeber}`);
 /* 
 alert(`Fora da Função - Idade: ${idade}`);
 Erro pois a variavel let nao existe fora do escopo dela
