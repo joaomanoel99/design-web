@@ -1,7 +1,29 @@
-const amigos = ['pedro', 'ana', 'clara'];
-tam = amigos.length;
+/* Processamento/Armazenamento */
+const lista = [];
 
-console.log(`arranjo ${amigos} `);
-console.log(`tamanho ${tam}`);
-console.log(`primeiro ${}`);
-console.log(`ultimo  ${}`);
+/* Entradas */
+const formulario = document.getElementById("formulario");
+const texto = formulario.texto;
+
+/* Saídas */
+const tags = document.getElementById("tags");
+
+/* Gatilho/Evento */
+formulario.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let t = texto.value;
+    t = t.split(" ");
+
+    for (let i = 0; i < t.length; i++) {
+        let palavra = t[i];
+        palavra = palavra.toUpperCase();
+
+        if (palavra.includes("#")) {
+            lista.push(palavra);
+        }
+    }
+
+    tags.innerHTML = lista;
+    formulario.reset();
+});
